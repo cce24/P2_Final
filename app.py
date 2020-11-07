@@ -11,17 +11,9 @@ password = 'postgres'
 #################################################
 # Database Setup
 #################################################
-# engine = create_engine(
-#     f"postgres://{postgres}:{password}@localhost:5432/Project_2")
-# conn = engine.connect()
-from flask_sqlalchemy import SQLAlchemy
-app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DATABASE_URL', '') or "sqlite:///db.sqlite"
-
-# Remove tracking modifications
-app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
-db = SQLAlchemy(app)
-
+engine = create_engine(
+    f"postgres://{postgres}:{password}@localhost:5432/Project_2")
+conn = engine.connect()
 
 #################################################
 # Flask Setup
